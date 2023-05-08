@@ -1,0 +1,579 @@
+:root {
+  --clr-accent: rgba(68, 214, 44, 1);
+  --clr-bg-black: rgba(0, 0, 0, 1);
+  --clr-accent-gray: rgba(136, 136, 136, 1);
+  --clr-border: rgba(34, 34, 34, 1);
+  --clr-tag: rgba(255, 156, 7, 1);
+  --clr-footer-bg: rgba(17, 17, 17, 1);
+
+  --ff-light: "Razer-light";
+  --ff-regular: "Razer-Regular";
+  --ff-bold: "Razer-Bold";
+  --ff-Extra-Bold: "Razer-Extra-Bold";
+}
+
+@font-face {
+  font-family: "Razer-Light";
+  src: url(/assets/fonts/RazerF5-normal-300-100.otf);
+}
+
+@font-face {
+  font-family: "Razer-Regular";
+  src: url(/assets/fonts/RazerF5-normal-400-100.otf);
+}
+
+@font-face {
+  font-family: "Razer-Bold";
+  src: url(/assets/fonts/RazerF5-normal-500-100.otf);
+}
+
+@font-face {
+  font-family: "Razer-Extra-Bold";
+  src: url(/assets/fonts/RazerF5-normal-700-100.otf);
+}
+
+/* Utility classes */
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+@media (min-width: 752px) {
+  .sr-only {
+    display: none;
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+  transition: border-bottom 0.3s ease-in-out;
+}
+
+.link:hover {
+  border-bottom: 2px solid white;
+}
+
+/* header styling */
+
+/* nav styling */
+
+.nav-container {
+  padding: 0.7rem 7rem;
+  background-color: var(--clr-bg-black);
+  border-bottom: 1px solid var(--clr-accent);
+}
+
+.primary-nav-container {
+  gap: 4rem;
+  align-items: center;
+}
+
+.logo {
+  max-width: fit-content;
+}
+
+.primary-navigation {
+  gap: 4rem;
+  align-items: center;
+}
+
+.primary-navigation a {
+  text-decoration: none;
+  font-family: var(--ff-light);
+  color: var(--clr-accent-gray);
+  font-size: 0.9rem;
+  transition: color 0.2s ease-out;
+}
+
+.primary-nav-container a:hover {
+  color: white;
+}
+
+.search {
+  max-width: fit-content;
+  fill: #999999;
+  transition: color 0.2s ease-out;
+}
+
+.search:hover {
+  fill: white;
+}
+
+.cart {
+  max-width: 3vw;
+  fill: #999999;
+  transition: color 0.2s ease-out;
+}
+
+li a {
+  max-width: fit-content;
+}
+
+a .cart {
+  max-width: fit-content;
+}
+
+.cart:hover {
+  fill: white;
+}
+
+/* Nav Styling for mobile */
+@media (max-width: 752px) {
+  .primary-nav-container {
+    padding-inline: 1rem;
+    gap: 4rem;
+    /* justify-content: space-between; */
+  }
+  .logo {
+    margin-left: 3rem;
+  }
+
+  .PC-link {
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .PC-link img {
+    width: 3vw;
+  }
+
+  .cart {
+    width: 22px;
+    height: 22px;
+  }
+  .primary-navigation {
+    /* background: red; */
+    flex-direction: column;
+    position: fixed;
+    inset: 7% -10% 0 0;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: min(1vh, 1rem) 1rem;
+    z-index: 1000;
+    background-color: var(--clr-bg-black);
+
+    transform: translateX(-100%);
+    transition: transform 350ms ease-out;
+  }
+
+  .primary-navigation li {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--clr-accent-gray);
+    width: 90%;
+  }
+
+  .primary-navigation a {
+    font-size: 1.2rem;
+  }
+
+  .primary-navigation[data-visible="true"] {
+    transform: translateX(0%);
+  }
+
+  .mobile-nav-toggle {
+    position: absolute;
+    background-image: url(/assets/images/hamburger.svg);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    z-index: 10000;
+    width: 2rem;
+    aspect-ratio: 1;
+    top: 1.3rem;
+    right: 21rem;
+    border: none;
+  }
+
+  .mobile-nav-toggle[aria-expanded="true"] {
+    background-image: url(/assets/images/close.svg);
+  }
+
+  .primary-navigation li:has(svg) {
+    display: none;
+  }
+
+  .search-container {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    align-items: center;
+    gap: 1rem;
+    background-color: #141414;
+    width: 90%;
+  }
+
+  .search-box[type="Search"] {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: text;
+    width: 80%;
+  }
+
+  .search-box::placeholder {
+    font-family: var(--ff-light);
+  }
+
+  .link-nav {
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .hidden-list {
+    width: 100%;
+    gap: 0.5rem;
+    transform: translateX(-120%);
+    transition: transform 350ms ease-out;
+  }
+
+  .hidden-list[data-visible="true"] {
+    transform: translateX(0%);
+  }
+
+  .hidden-list[data-visible="false"] {
+    visibility: hidden;
+    height: 0;
+  }
+
+  .hidden-list {
+    transition: visibility 0s, height 360ms ease-out;
+  }
+}
+/* Nav styling for mobile end */
+
+/* Hero Styling */
+.shop-cta {
+  margin-top: 0.3rem;
+  padding: 0.5rem 0;
+  background: var(--clr-accent-gray);
+  text-align: center;
+  color: #eeeeee;
+}
+
+.shop-cta p {
+  font-family: var(--ff-light);
+  font-size: 0.8rem;
+}
+
+.shop-cta a {
+  color: #eeeeee;
+}
+
+/* Main Styling */
+.main-cta {
+  padding-inline: 1rem;
+  background-image: url(/assets/images/viva\ chrome.jpg);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  height: 90vh;
+  border-bottom: 10px solid var(--clr-border);
+}
+
+.main-contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  /* text-align: center; */
+}
+
+.main-contents h1 {
+  font-family: var(--ff-bold);
+  font-size: 4rem;
+}
+
+.main-contents h2 {
+  font-family: var(--ff-regular);
+  font-size: 2rem;
+}
+
+.main-contents p {
+  font-family: var(--ff-light);
+}
+
+.main-contents p > span {
+  color: var(--clr-accent);
+  font-size: 1.5rem;
+}
+
+.main2 {
+  padding-top: 2rem;
+  background-image: url(/assets/images/laptop.jpg);
+  height: 100vh;
+}
+
+.product-tag {
+  display: flex;
+  gap: 1rem;
+}
+
+.main3 {
+  padding-top: 2rem;
+  background-image: url(/assets/images/razer\ guy.jpg);
+  height: 100vh;
+}
+
+.razer-tag {
+  padding: 0.2rem 1rem;
+  background-color: var(--clr-tag);
+  color: var(--clr-bg-black);
+}
+
+.razer-tag a {
+  color: var(--clr-bg-black);
+}
+
+.razer-link {
+  font-size: 0.7rem;
+}
+
+#exclusive {
+  margin-top: -5px;
+  font-family: var(--ff-bold);
+}
+
+/* main styling for mlbile start */
+@media (max-width: 752px) {
+  .main-cta {
+    padding-top: 4rem;
+    /* height: 70vh; */
+  }
+
+  .main-contents h1 {
+    font-family: var(--ff-bold);
+    font-size: 2rem;
+  }
+
+  .main-contents h2 {
+    font-family: var(--ff-regular);
+    font-size: 1rem;
+  }
+
+  .main3 h1 {
+    font-size: 1.7rem;
+  }
+}
+
+/* carousel styling */
+.wrapper {
+  grid-template-columns: 1fr 1fr;
+  column-gap: 0.7rem;
+  background-color: var(--clr-border);
+}
+
+.carousel h1 {
+  font-size: 2rem;
+}
+
+.carousel h2 {
+  font-size: 1rem;
+}
+
+.carousel {
+  padding-top: 2rem;
+}
+
+.carousel-1 {
+  background-image: url(/assets/images/headset\ green.jpg);
+}
+
+.carousel-2 {
+  background-image: url(/assets/images/gh.png);
+}
+
+.carousel-3 {
+  background-image: url(/assets/images/bb.png);
+}
+
+.carousel-4 {
+  background-image: url(/assets/images/hj.png);
+}
+
+.carousel-5 {
+  background-image: url(/assets/images/headset-chrome.jpg);
+}
+
+.carousel-6 {
+  background-image: url(/assets/images/keyboard\ light.jpg);
+}
+
+@media (max-width: 752px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .carousel h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* footer styling */
+.footer {
+  padding: 1rem 8rem;
+  background-color: var(--clr-footer-bg);
+}
+
+.footer-wrapper1 {
+  display: inline-flex;
+  gap: 8rem;
+  padding-bottom: 1.5rem;
+}
+
+#active {
+  color: white;
+}
+
+.footer-link {
+  font-family: var(--ff-light);
+  font-size: 0.7rem;
+  color: var(--clr-accent-gray);
+}
+
+.ftl {
+  transition: border-bottom 0.3s ease-in-out;
+}
+
+.ftl:hover {
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+.list-item {
+  margin-left: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.anchor {
+  color: var(--clr-accent);
+  font-family: var(--ff-regular);
+  font-size: 0.9rem;
+}
+
+.anchor sup {
+  font-size: 0.5rem;
+}
+
+.social-media-links {
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+.divider {
+  border: 0.1px solid var(--clr-accent-gray);
+}
+
+.footer-wrapper2 {
+  padding-top: 1.5rem;
+  justify-content: space-between;
+}
+
+.ft-aside {
+  align-items: center;
+  gap: 2rem;
+}
+
+.tertiary-nav {
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (max-width: 752px) {
+  .footer {
+    padding-inline: 2rem;
+  }
+
+  .footer-wrapper1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .list-item {
+    margin-left: 0rem;
+    align-items: flex-start;
+  }
+
+  .footer-wrapper2 {
+    display: inline-block;
+  }
+
+  .ft-aside {
+    display: inline-block;
+  }
+}
+
+/* General Styling */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+body {
+  background-color: var(--clr-bg-black);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol,
+li {
+  list-style-type: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a {
+  text-decoration-skip-ink: auto;
+  text-decoration: none;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <header>
+      <div class="nav-container">
+        <div class="primary-nav-container | flex">
+          <button
+            aria-controls="primary-navigation"
+            class="mobile-nav-toggle | sr-only"
+            aria-expanded="false"
+          >
+            <span></span>
+          </button>
+          <div>
+            <img src="/assets/images/razer logo.png" class="logo" alt="Logo" />
+          </div>
+          <nav>
+            <ul
+              class="flex | primary-navigation"
+              data-visible="false"
+              id="primary-navigation"
+            >
+              <div class="sr-only | flex | search-container">
+                <svg
+                  width="17"
+                  height="16"
+                  viewBox="0 0 17 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.15308 12.4375C6.29891 12.4375 5.49683 12.2708 4.74683 11.9375C3.98641 11.6146 3.32495 11.1719 2.76245 10.6094C2.19995 10.0469 1.75724 9.39062 1.43433 8.64062C1.11141 7.88021 0.949951 7.07292 0.949951 6.21875C0.949951 5.35417 1.11141 4.54688 1.43433 3.79688C1.76766 3.04688 2.21558 2.39062 2.77808 1.82812C3.34058 1.26562 3.99683 0.817708 4.74683 0.484375C5.49683 0.161458 6.30412 0 7.1687 0C8.02287 0 8.83016 0.161458 9.59058 0.484375C10.3406 0.817708 10.9968 1.26562 11.5593 1.82812C12.1218 2.39062 12.5645 3.04688 12.8875 3.79688C13.2208 4.54688 13.3875 5.35417 13.3875 6.21875C13.3875 7.07292 13.2234 7.8776 12.8953 8.63281C12.5671 9.38802 12.1218 10.0469 11.5593 10.6094C10.9968 11.1719 10.338 11.6172 9.58276 11.9453C8.82756 12.2734 8.02287 12.4375 7.1687 12.4375C7.1687 12.4375 7.16349 12.4375 7.15308 12.4375ZM7.15308 0.859375C6.42391 0.869792 5.7312 1.01562 5.07495 1.29688C4.42912 1.57812 3.86662 1.96094 3.38745 2.44531C2.90828 2.92969 2.52808 3.5 2.24683 4.15625C1.96558 4.80208 1.82495 5.49479 1.82495 6.23438C1.82495 6.97396 1.96558 7.66667 2.24683 8.3125C2.52808 8.96875 2.91089 9.53906 3.39526 10.0234C3.87964 10.5078 4.44995 10.8906 5.1062 11.1719C5.75203 11.4531 6.44995 11.5938 7.19995 11.5938C7.93953 11.5938 8.63224 11.4531 9.27808 11.1719C9.93433 10.8906 10.5046 10.5078 10.989 10.0234C11.4734 9.53906 11.8562 8.96875 12.1375 8.3125C12.4187 7.66667 12.5593 6.97396 12.5593 6.23438C12.5593 5.48438 12.4187 4.78385 12.1375 4.13281C11.8562 3.48177 11.4708 2.91146 10.9812 2.42188C10.4916 1.94271 9.92131 1.5625 9.27026 1.28125C8.61922 1 7.92912 0.859375 7.19995 0.859375C7.18953 0.859375 7.18172 0.859375 7.17651 0.859375C7.17131 0.859375 7.16349 0.859375 7.15308 0.859375ZM15.2781 16L11.4812 12.2031L13.1531 10.5469L16.95 14.3438L16.3406 14.9531L13.1531 11.7656L12.7 12.2031L15.8875 15.3906L15.2781 16ZM10.95 10.625L11.5593 10L12.9343 11.375L12.3093 11.9844L10.95 10.625Z"
+                    fill="#999999"
+                  /></svg
+                ><input
+                  type="search"
+                  class="search-box"
+                  name="Search"
+                  id=""
+                  placeholder="Search Here"
+                />
+              </div>
+
+              <li><a href="#">Store</a></li>
+              <li id="initialLink" class="link-nav | flex">
+                <a class="PC-link | flex" href="#" aria-expanded="false"
+                  >PC<span class="sr-only"
+                    ><img src="/assets/images/_.svg" alt=""
+                  /></span>
+                </a>
+                <ul
+                  id="linkList"
+                  class="grid | hidden-list | sr-only"
+                  data-visible="false"
+                >
+                  <li><a href="#">Laptops</a></li>
+                  <li><a href="#">Desktops & Components</a></li>
+                  <li><a href="#">Monitors</a></li>
+                  <li><a href="#">Mice</a></li>
+                  <li><a href="#">Mats</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Console</a></li>
+              <li><a href="#">Mobile</a></li>
+              <li><a href="#">Lifestyle</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Community</a></li>
+              <li><a href="#">Support</a></li>
+              <li>
+                <a href="#"
+                  ><svg
+                    class="search"
+                    id="search"
+                    width="17"
+                    height="16"
+                    viewBox="0 0 17 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7.15308 12.4375C6.29891 12.4375 5.49683 12.2708 4.74683 11.9375C3.98641 11.6146 3.32495 11.1719 2.76245 10.6094C2.19995 10.0469 1.75724 9.39062 1.43433 8.64062C1.11141 7.88021 0.949951 7.07292 0.949951 6.21875C0.949951 5.35417 1.11141 4.54688 1.43433 3.79688C1.76766 3.04688 2.21558 2.39062 2.77808 1.82812C3.34058 1.26562 3.99683 0.817708 4.74683 0.484375C5.49683 0.161458 6.30412 0 7.1687 0C8.02287 0 8.83016 0.161458 9.59058 0.484375C10.3406 0.817708 10.9968 1.26562 11.5593 1.82812C12.1218 2.39062 12.5645 3.04688 12.8875 3.79688C13.2208 4.54688 13.3875 5.35417 13.3875 6.21875C13.3875 7.07292 13.2234 7.8776 12.8953 8.63281C12.5671 9.38802 12.1218 10.0469 11.5593 10.6094C10.9968 11.1719 10.338 11.6172 9.58276 11.9453C8.82756 12.2734 8.02287 12.4375 7.1687 12.4375C7.1687 12.4375 7.16349 12.4375 7.15308 12.4375ZM7.15308 0.859375C6.42391 0.869792 5.7312 1.01562 5.07495 1.29688C4.42912 1.57812 3.86662 1.96094 3.38745 2.44531C2.90828 2.92969 2.52808 3.5 2.24683 4.15625C1.96558 4.80208 1.82495 5.49479 1.82495 6.23438C1.82495 6.97396 1.96558 7.66667 2.24683 8.3125C2.52808 8.96875 2.91089 9.53906 3.39526 10.0234C3.87964 10.5078 4.44995 10.8906 5.1062 11.1719C5.75203 11.4531 6.44995 11.5938 7.19995 11.5938C7.93953 11.5938 8.63224 11.4531 9.27808 11.1719C9.93433 10.8906 10.5046 10.5078 10.989 10.0234C11.4734 9.53906 11.8562 8.96875 12.1375 8.3125C12.4187 7.66667 12.5593 6.97396 12.5593 6.23438C12.5593 5.48438 12.4187 4.78385 12.1375 4.13281C11.8562 3.48177 11.4708 2.91146 10.9812 2.42188C10.4916 1.94271 9.92131 1.5625 9.27026 1.28125C8.61922 1 7.92912 0.859375 7.19995 0.859375C7.18953 0.859375 7.18172 0.859375 7.17651 0.859375C7.17131 0.859375 7.16349 0.859375 7.15308 0.859375ZM15.2781 16L11.4812 12.2031L13.1531 10.5469L16.95 14.3438L16.3406 14.9531L13.1531 11.7656L12.7 12.2031L15.8875 15.3906L15.2781 16ZM10.95 10.625L11.5593 10L12.9343 11.375L12.3093 11.9844L10.95 10.625Z"
+                    /></svg
+                ></a>
+              </li>
+            </ul>
+          </nav>
+          <li>
+            <a href="#"
+              ><svg
+                class="cart"
+                width="17"
+                height="16"
+                viewBox="0 0 13 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.4197 7.41244H3.8191C3.73758 7.41244 3.66546 7.38736 3.60275 7.33719C3.54004 7.28702 3.49928 7.22118 3.48046 7.13965L2.02243 0.696092H0.31042C0.222624 0.683549 0.148939 0.644355 0.0893632 0.578508C0.0297877 0.512662 0 0.435841 0 0.348045C0 0.26025 0.0297877 0.183429 0.0893632 0.117582C0.148939 0.0517357 0.222624 0.0125413 0.31042 -9.53674e-07H2.29522C2.37675 -9.53674e-07 2.44887 0.0250835 2.51158 0.0752523C2.57429 0.125421 2.61505 0.191268 2.63386 0.272792L4.0919 6.71635H11.1469L12.1816 2.15412H4.59045C4.58418 2.15412 4.57634 2.15569 4.56693 2.15883C4.55753 2.16196 4.54969 2.16353 4.54342 2.16353C4.44935 2.16353 4.36782 2.12904 4.29884 2.06006C4.22986 1.99107 4.19537 1.90641 4.19537 1.80608C4.19537 1.71201 4.22986 1.63049 4.29884 1.5615C4.36782 1.49252 4.44935 1.45803 4.54342 1.45803C4.54969 1.45803 4.55753 1.45803 4.56693 1.45803C4.57634 1.45803 4.58418 1.46117 4.59045 1.46744H12.6143C12.7084 1.46744 12.7899 1.50036 12.8589 1.56621C12.9279 1.63205 12.9624 1.71515 12.9624 1.81548C12.9624 1.82803 12.9608 1.84057 12.9577 1.85311C12.9545 1.86565 12.953 1.87819 12.953 1.89074L11.7583 7.13965C11.7395 7.22118 11.7003 7.28702 11.6407 7.33719C11.5812 7.38736 11.5075 7.41244 11.4197 7.41244ZM6.30246 8.77641C6.30246 9.01471 6.21937 9.21696 6.05318 9.38314C5.887 9.54932 5.68476 9.63242 5.44645 9.63242C5.20815 9.63242 5.00591 9.54932 4.83973 9.38314C4.67354 9.21696 4.59045 9.01471 4.59045 8.77641C4.59045 8.53811 4.67354 8.33586 4.83973 8.16968C5.00591 8.0035 5.20815 7.9204 5.44645 7.9204C5.68476 7.9204 5.887 8.0035 6.05318 8.16968C6.21937 8.33586 6.30246 8.53811 6.30246 8.77641ZM10.6483 8.77641C10.6483 9.01471 10.5652 9.21696 10.3991 9.38314C10.2329 9.54932 10.0306 9.63242 9.79233 9.63242C9.5603 9.63242 9.35962 9.54932 9.1903 9.38314C9.02098 9.21696 8.93632 9.01471 8.93632 8.77641C8.93632 8.53811 9.02098 8.33586 9.1903 8.16968C9.35962 8.0035 9.5603 7.9204 9.79233 7.9204C10.0306 7.9204 10.2329 8.0035 10.3991 8.16968C10.5652 8.33586 10.6483 8.53811 10.6483 8.77641Z"
+                />
+              </svg>
+            </a>
+          </li>
+        </div>
+      </div>
+      <div class="shop-cta">
+        <p>
+          Unleash a new age of technology with an arsenal of cutting-edge
+          innovations that will keep you ahead of the game.
+          <span><a href="#" class="link">Shop Now ></a></span>
+        </p>
+      </div>
+    </header>
+    <section>
+      <main class="main-cta">
+        <div class="main-contents">
+          <h1>VIVA LA CHROMA</h1>
+          <h2>LIGHT IT UP WITH EXCLUSIVE OFFERS</h2>
+          <p><a href="#" class="link">Show More</a><span>></span></p>
+        </div>
+      </main>
+    </section>
+
+    <section>
+      <main class="main-cta | main2">
+        <div class="main-contents">
+          <h1>NEW RAZER BLADE 16</h1>
+          <h2>BIGGER. BETTER. STILL THE BEST.</h2>
+          <div class="product-tag">
+            <p><a href="#" class="link">Learn More</a><span>></span></p>
+            <p><a href="#" class="link">Buy</a><span>></span></p>
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <section>
+      <main class="main-cta | main3">
+        <div class="main-contents">
+          <div class="razer-tag">
+            <p class="razer-link"><a href="#" class="">RAZER.COM</a></p>
+            <p id="exclusive">EXCLUSIVE</p>
+          </div>
+          <h1>RAZER | RETROSUPERFUTURE</h1>
+          <h2>FUTURE SIGHT. FUTURE BRIGHT.</h2>
+          <div class="product-tag">
+            <p><a href="#" class="link">Learn More</a><span>></span></p>
+            <p><a href="#" class="link">Buy</a><span>></span></p>
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <section>
+      <div class="wrapper | grid">
+        <div class="main-cta | carousel | carousel-1">
+          <div class="main-contents">
+            <h1>RAZER | RETROSUPERFUTURE</h1>
+            <h2>FUTURE SIGHT. FUTURE BRIGHT.</h2>
+            <div class="product-tag">
+              <p><a href="#" class="link">Learn More</a><span>></span></p>
+              <p><a href="#" class="link">Buy</a><span>></span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="main-cta | carousel | carousel-2">
+          <div class="main-contents">
+            <h1>RAZER | RETROSUPERFUTURE</h1>
+            <h2>FUTURE SIGHT. FUTURE BRIGHT.</h2>
+            <div class="product-tag">
+              <p><a href="#" class="link">Learn More</a><span>></span></p>
+              <p><a href="#" class="link">Buy</a><span>></span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="main-cta | carousel | carousel-3 |">
+          <div class="main-contents">
+            <h1>RAZER | RETROSUPERFUTURE</h1>
+            <h2>FUTURE SIGHT. FUTURE BRIGHT.</h2>
+            <div class="product-tag">
+              <p><a href="#" class="link">Learn More</a><span>></span></p>
+              <p><a href="#" class="link">Buy</a><span>></span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="main-cta | carousel | carousel-4">
+          <div class="main-contents">
+            <div class="razer-tag">
+              <p class="razer-link"><a href="#" class="">RAZER.COM</a></p>
+              <p id="exclusive">EXCLUSIVE</p>
+            </div>
+            <h1>RAZER | RETROSUPERFUTURE</h1>
+            <h2>FUTURE SIGHT. FUTURE BRIGHT.</h2>
+            <div class="product-tag">
+              <p><a href="#" class="link">Learn More</a><span>></span></p>
+              <p><a href="#" class="link">Buy</a><span>></span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="main-cta | carousel | carousel-5">
+          <div class="main-contents">
+            <h1>RAZER | RETROSUPERFUTURE</h1>
+            <h2>FUTURE SIGHT. FUTURE BRIGHT.</h2>
+            <div class="product-tag">
+              <p><a href="#" class="link">Learn More</a><span>></span></p>
+              <p><a href="#" class="link">Buy</a><span>></span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="main-cta | carousel | carousel-6">
+          <div class="main-contents">
+            <div class="razer-tag">
+              <p class="razer-link"><a href="#" class="">RAZER.COM</a></p>
+              <p id="exclusive">EXCLUSIVE</p>
+            </div>
+            <h1>RAZER | RETROSUPERFUTURE</h1>
+            <h2>FUTURE SIGHT. FUTURE BRIGHT.</h2>
+            <div class="product-tag">
+              <p><a href="#" class="link">Learn More</a><span>></span></p>
+              <p><a href="#" class="link">Buy</a><span>></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-wrapper1">
+        <ul class="secondary-nav">
+          <li><a href="#" id="active" class="footer-link">Shop</a></li>
+          <li><a href="#" class="footer-link | ftl">RazerStrores</a></li>
+          <li><a href="#" class="footer-link | ftl">RazerCafe</a></li>
+          <li><a href="#" class="footer-link | ftl">Store Locator</a></li>
+          <li><a href="#" class="footer-link | ftl">Purchase Programs</a></li>
+          <li><a href="#" class="footer-link | ftl">Education</a></li>
+          <li><a href="#" class="footer-link | ftl">Exclusives</a></li>
+          <li><a href="#" class="footer-link | ftl">RazerStore Rewards</a></li>
+          <li><a href="#" class="footer-link | ftl">Newsletter</a></li>
+        </ul>
+
+        <ul class="secondary-nav">
+          <li><a href="#" id="active" class="footer-link">Explore</a></li>
+          <li><a href="#" class="footer-link | ftl">Technology</a></li>
+          <li><a href="#" class="footer-link | ftl">Chroma RGB</a></li>
+          <li><a href="#" class="footer-link | ftl">Concepts</a></li>
+          <li><a href="#" class="footer-link | ftl">Esports</a></li>
+          <li><a href="#" class="footer-link | ftl">Collabs</a></li>
+        </ul>
+
+        <ul class="secondary-nav">
+          <li><a href="#" id="active" class="footer-link">Support</a></li>
+          <li><a href="#" class="footer-link | ftl">Get Help</a></li>
+          <li>
+            <a href="#" class="footer-link | ftl">Registration & Warranty</a>
+          </li>
+          <li><a href="#" class="footer-link | ftl">RazerStore Support</a></li>
+          <li><a href="#" class="footer-link | ftl">Razer Care</a></li>
+          <li><a href="#" class="footer-link | ftl">Manage Razer ID</a></li>
+          <li><a href="#" class="footer-link | ftl">Support Videos</a></li>
+          <li>
+            <a href="#" class="footer-link | ftl">Accessibility Statement</a>
+          </li>
+        </ul>
+
+        <ul class="secondary-nav">
+          <li><a href="#" id="active" class="footer-link">Company</a></li>
+          <li><a href="#" class="footer-link | ftl">About Us</a></li>
+          <li><a href="#" class="footer-link | ftl">Careers</a></li>
+          <li><a href="#" class="footer-link | ftl">Press Room</a></li>
+          <li><a href="#" class="footer-link | ftl">zVentures</a></li>
+          <li><a href="#" class="footer-link | ftl">Contact Us</a></li>
+        </ul>
+
+        <div class="list-item">
+          <p class="anchor">FOR GAMERS. BY GAMERS. <sup>TM</sup></p>
+          <div class="social-media-links">
+            <a href="#"><img src="/assets/images/facebook.svg" alt="" /></a>
+            <a href="#"><img src="/assets/images/instagram.svg" alt="" /></a>
+            <a href="#"><img src="/assets/images/whatsapp.svg" alt="" /></a>
+          </div>
+        </div>
+      </div>
+      <hr class="divider" />
+      <div class="footer-wrapper2 | flex">
+        <div class="ft-aside | flex">
+          <p class="footer-link">
+            Copyright &copy; 2023 Razer Inc. All rights reserved
+          </p>
+
+          <ul class="tertiary-nav | flex">
+            <li><a href="#" class="footer-link | ftl">Site Map</a></li>
+            <li><a href="#" class="footer-link |">|</a></li>
+            <li><a href="#" class="footer-link | ftl">Legal terms</a></li>
+            <li><a href="#" class="footer-link |">|</a></li>
+            <li><a href="#" class="footer-link | ftl">Privacy Policy</a></li>
+            <li><a href="#" class="footer-link |">|</a></li>
+            <li><a href="#" class="footer-link | ftl">Cookies Settings</a></li>
+          </ul>
+        </div>
+        <div class="tertiary-nav | flex">
+          <p class="footer-link" id="active">United States</p>
+          <p class="footer-link" id="active">|</p>
+          <p><a href="#" class="footer-link | ftl">Change Location ></a></p>
+        </div>  
+      </div>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>
